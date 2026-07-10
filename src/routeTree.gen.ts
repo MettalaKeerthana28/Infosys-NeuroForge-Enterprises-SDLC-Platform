@@ -9,38 +9,510 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UnauthorizedRouteImport } from './routes/unauthorized'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OauthCallbackRouteImport } from './routes/oauth.callback'
+import { Route as AppTestingRouteImport } from './routes/_app/testing'
+import { Route as AppTasksRouteImport } from './routes/_app/tasks'
+import { Route as AppSprintsRouteImport } from './routes/_app/sprints'
+import { Route as AppSettingsRouteImport } from './routes/_app/settings'
+import { Route as AppSecurityRouteImport } from './routes/_app/security'
+import { Route as AppRequirementsRouteImport } from './routes/_app/requirements'
+import { Route as AppProfileRouteImport } from './routes/_app/profile'
+import { Route as AppPortfolioRouteImport } from './routes/_app/portfolio'
+import { Route as AppPipelinesRouteImport } from './routes/_app/pipelines'
+import { Route as AppNotificationsRouteImport } from './routes/_app/notifications'
+import { Route as AppNeurobotRouteImport } from './routes/_app/neurobot'
+import { Route as AppDashboardRouteImport } from './routes/_app/dashboard'
+import { Route as AppCodeReviewRouteImport } from './routes/_app/code-review'
+import { Route as AppBugsRouteImport } from './routes/_app/bugs'
+import { Route as AppAnalyticsRouteImport } from './routes/_app/analytics'
+import { Route as AppProjectsIndexRouteImport } from './routes/_app/projects/index'
+import { Route as AppOrganizationsIndexRouteImport } from './routes/_app/organizations/index'
+import { Route as AppProjectsNewRouteImport } from './routes/_app/projects/new'
+import { Route as AppProjectsProjectIdRouteImport } from './routes/_app/projects/$projectId'
+import { Route as AppOrganizationsNewRouteImport } from './routes/_app/organizations/new'
+import { Route as AppOrganizationsOrganizationIdRouteImport } from './routes/_app/organizations/$organizationId'
+import { Route as AppProjectsProjectIdIndexRouteImport } from './routes/_app/projects/$projectId/index'
+import { Route as AppOrganizationsOrganizationIdIndexRouteImport } from './routes/_app/organizations/$organizationId/index'
+import { Route as AppProjectsProjectIdMilestonesRouteImport } from './routes/_app/projects/$projectId/milestones'
+import { Route as AppProjectsProjectIdMembersRouteImport } from './routes/_app/projects/$projectId/members'
+import { Route as AppOrganizationsOrganizationIdTeamsRouteImport } from './routes/_app/organizations/$organizationId/teams'
+import { Route as AppOrganizationsOrganizationIdSettingsRouteImport } from './routes/_app/organizations/$organizationId/settings'
+import { Route as AppOrganizationsOrganizationIdMembersRouteImport } from './routes/_app/organizations/$organizationId/members'
 
+const UnauthorizedRoute = UnauthorizedRouteImport.update({
+  id: '/unauthorized',
+  path: '/unauthorized',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/_app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OauthCallbackRoute = OauthCallbackRouteImport.update({
+  id: '/oauth/callback',
+  path: '/oauth/callback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTestingRoute = AppTestingRouteImport.update({
+  id: '/testing',
+  path: '/testing',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTasksRoute = AppTasksRouteImport.update({
+  id: '/tasks',
+  path: '/tasks',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSprintsRoute = AppSprintsRouteImport.update({
+  id: '/sprints',
+  path: '/sprints',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSecurityRoute = AppSecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRequirementsRoute = AppRequirementsRouteImport.update({
+  id: '/requirements',
+  path: '/requirements',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProfileRoute = AppProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPortfolioRoute = AppPortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPipelinesRoute = AppPipelinesRouteImport.update({
+  id: '/pipelines',
+  path: '/pipelines',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotificationsRoute = AppNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNeurobotRoute = AppNeurobotRouteImport.update({
+  id: '/neurobot',
+  path: '/neurobot',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDashboardRoute = AppDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCodeReviewRoute = AppCodeReviewRouteImport.update({
+  id: '/code-review',
+  path: '/code-review',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppBugsRoute = AppBugsRouteImport.update({
+  id: '/bugs',
+  path: '/bugs',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAnalyticsRoute = AppAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProjectsIndexRoute = AppProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppOrganizationsIndexRoute = AppOrganizationsIndexRouteImport.update({
+  id: '/organizations/',
+  path: '/organizations/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProjectsNewRoute = AppProjectsNewRouteImport.update({
+  id: '/projects/new',
+  path: '/projects/new',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProjectsProjectIdRoute = AppProjectsProjectIdRouteImport.update({
+  id: '/projects/$projectId',
+  path: '/projects/$projectId',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppOrganizationsNewRoute = AppOrganizationsNewRouteImport.update({
+  id: '/organizations/new',
+  path: '/organizations/new',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppOrganizationsOrganizationIdRoute =
+  AppOrganizationsOrganizationIdRouteImport.update({
+    id: '/organizations/$organizationId',
+    path: '/organizations/$organizationId',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppProjectsProjectIdIndexRoute =
+  AppProjectsProjectIdIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AppProjectsProjectIdRoute,
+  } as any)
+const AppOrganizationsOrganizationIdIndexRoute =
+  AppOrganizationsOrganizationIdIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AppOrganizationsOrganizationIdRoute,
+  } as any)
+const AppProjectsProjectIdMilestonesRoute =
+  AppProjectsProjectIdMilestonesRouteImport.update({
+    id: '/milestones',
+    path: '/milestones',
+    getParentRoute: () => AppProjectsProjectIdRoute,
+  } as any)
+const AppProjectsProjectIdMembersRoute =
+  AppProjectsProjectIdMembersRouteImport.update({
+    id: '/members',
+    path: '/members',
+    getParentRoute: () => AppProjectsProjectIdRoute,
+  } as any)
+const AppOrganizationsOrganizationIdTeamsRoute =
+  AppOrganizationsOrganizationIdTeamsRouteImport.update({
+    id: '/teams',
+    path: '/teams',
+    getParentRoute: () => AppOrganizationsOrganizationIdRoute,
+  } as any)
+const AppOrganizationsOrganizationIdSettingsRoute =
+  AppOrganizationsOrganizationIdSettingsRouteImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AppOrganizationsOrganizationIdRoute,
+  } as any)
+const AppOrganizationsOrganizationIdMembersRoute =
+  AppOrganizationsOrganizationIdMembersRouteImport.update({
+    id: '/members',
+    path: '/members',
+    getParentRoute: () => AppOrganizationsOrganizationIdRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/unauthorized': typeof UnauthorizedRoute
+  '/analytics': typeof AppAnalyticsRoute
+  '/bugs': typeof AppBugsRoute
+  '/code-review': typeof AppCodeReviewRoute
+  '/dashboard': typeof AppDashboardRoute
+  '/neurobot': typeof AppNeurobotRoute
+  '/notifications': typeof AppNotificationsRoute
+  '/pipelines': typeof AppPipelinesRoute
+  '/portfolio': typeof AppPortfolioRoute
+  '/profile': typeof AppProfileRoute
+  '/requirements': typeof AppRequirementsRoute
+  '/security': typeof AppSecurityRoute
+  '/settings': typeof AppSettingsRoute
+  '/sprints': typeof AppSprintsRoute
+  '/tasks': typeof AppTasksRoute
+  '/testing': typeof AppTestingRoute
+  '/oauth/callback': typeof OauthCallbackRoute
+  '/organizations/$organizationId': typeof AppOrganizationsOrganizationIdRouteWithChildren
+  '/organizations/new': typeof AppOrganizationsNewRoute
+  '/projects/$projectId': typeof AppProjectsProjectIdRouteWithChildren
+  '/projects/new': typeof AppProjectsNewRoute
+  '/organizations/': typeof AppOrganizationsIndexRoute
+  '/projects/': typeof AppProjectsIndexRoute
+  '/organizations/$organizationId/members': typeof AppOrganizationsOrganizationIdMembersRoute
+  '/organizations/$organizationId/settings': typeof AppOrganizationsOrganizationIdSettingsRoute
+  '/organizations/$organizationId/teams': typeof AppOrganizationsOrganizationIdTeamsRoute
+  '/projects/$projectId/members': typeof AppProjectsProjectIdMembersRoute
+  '/projects/$projectId/milestones': typeof AppProjectsProjectIdMilestonesRoute
+  '/organizations/$organizationId/': typeof AppOrganizationsOrganizationIdIndexRoute
+  '/projects/$projectId/': typeof AppProjectsProjectIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/unauthorized': typeof UnauthorizedRoute
+  '/analytics': typeof AppAnalyticsRoute
+  '/bugs': typeof AppBugsRoute
+  '/code-review': typeof AppCodeReviewRoute
+  '/dashboard': typeof AppDashboardRoute
+  '/neurobot': typeof AppNeurobotRoute
+  '/notifications': typeof AppNotificationsRoute
+  '/pipelines': typeof AppPipelinesRoute
+  '/portfolio': typeof AppPortfolioRoute
+  '/profile': typeof AppProfileRoute
+  '/requirements': typeof AppRequirementsRoute
+  '/security': typeof AppSecurityRoute
+  '/settings': typeof AppSettingsRoute
+  '/sprints': typeof AppSprintsRoute
+  '/tasks': typeof AppTasksRoute
+  '/testing': typeof AppTestingRoute
+  '/oauth/callback': typeof OauthCallbackRoute
+  '/organizations/new': typeof AppOrganizationsNewRoute
+  '/projects/new': typeof AppProjectsNewRoute
+  '/organizations': typeof AppOrganizationsIndexRoute
+  '/projects': typeof AppProjectsIndexRoute
+  '/organizations/$organizationId/members': typeof AppOrganizationsOrganizationIdMembersRoute
+  '/organizations/$organizationId/settings': typeof AppOrganizationsOrganizationIdSettingsRoute
+  '/organizations/$organizationId/teams': typeof AppOrganizationsOrganizationIdTeamsRoute
+  '/projects/$projectId/members': typeof AppProjectsProjectIdMembersRoute
+  '/projects/$projectId/milestones': typeof AppProjectsProjectIdMilestonesRoute
+  '/organizations/$organizationId': typeof AppOrganizationsOrganizationIdIndexRoute
+  '/projects/$projectId': typeof AppProjectsProjectIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_app': typeof AppRouteWithChildren
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/unauthorized': typeof UnauthorizedRoute
+  '/_app/analytics': typeof AppAnalyticsRoute
+  '/_app/bugs': typeof AppBugsRoute
+  '/_app/code-review': typeof AppCodeReviewRoute
+  '/_app/dashboard': typeof AppDashboardRoute
+  '/_app/neurobot': typeof AppNeurobotRoute
+  '/_app/notifications': typeof AppNotificationsRoute
+  '/_app/pipelines': typeof AppPipelinesRoute
+  '/_app/portfolio': typeof AppPortfolioRoute
+  '/_app/profile': typeof AppProfileRoute
+  '/_app/requirements': typeof AppRequirementsRoute
+  '/_app/security': typeof AppSecurityRoute
+  '/_app/settings': typeof AppSettingsRoute
+  '/_app/sprints': typeof AppSprintsRoute
+  '/_app/tasks': typeof AppTasksRoute
+  '/_app/testing': typeof AppTestingRoute
+  '/oauth/callback': typeof OauthCallbackRoute
+  '/_app/organizations/$organizationId': typeof AppOrganizationsOrganizationIdRouteWithChildren
+  '/_app/organizations/new': typeof AppOrganizationsNewRoute
+  '/_app/projects/$projectId': typeof AppProjectsProjectIdRouteWithChildren
+  '/_app/projects/new': typeof AppProjectsNewRoute
+  '/_app/organizations/': typeof AppOrganizationsIndexRoute
+  '/_app/projects/': typeof AppProjectsIndexRoute
+  '/_app/organizations/$organizationId/members': typeof AppOrganizationsOrganizationIdMembersRoute
+  '/_app/organizations/$organizationId/settings': typeof AppOrganizationsOrganizationIdSettingsRoute
+  '/_app/organizations/$organizationId/teams': typeof AppOrganizationsOrganizationIdTeamsRoute
+  '/_app/projects/$projectId/members': typeof AppProjectsProjectIdMembersRoute
+  '/_app/projects/$projectId/milestones': typeof AppProjectsProjectIdMilestonesRoute
+  '/_app/organizations/$organizationId/': typeof AppOrganizationsOrganizationIdIndexRoute
+  '/_app/projects/$projectId/': typeof AppProjectsProjectIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/reset-password'
+    | '/unauthorized'
+    | '/analytics'
+    | '/bugs'
+    | '/code-review'
+    | '/dashboard'
+    | '/neurobot'
+    | '/notifications'
+    | '/pipelines'
+    | '/portfolio'
+    | '/profile'
+    | '/requirements'
+    | '/security'
+    | '/settings'
+    | '/sprints'
+    | '/tasks'
+    | '/testing'
+    | '/oauth/callback'
+    | '/organizations/$organizationId'
+    | '/organizations/new'
+    | '/projects/$projectId'
+    | '/projects/new'
+    | '/organizations/'
+    | '/projects/'
+    | '/organizations/$organizationId/members'
+    | '/organizations/$organizationId/settings'
+    | '/organizations/$organizationId/teams'
+    | '/projects/$projectId/members'
+    | '/projects/$projectId/milestones'
+    | '/organizations/$organizationId/'
+    | '/projects/$projectId/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/reset-password'
+    | '/unauthorized'
+    | '/analytics'
+    | '/bugs'
+    | '/code-review'
+    | '/dashboard'
+    | '/neurobot'
+    | '/notifications'
+    | '/pipelines'
+    | '/portfolio'
+    | '/profile'
+    | '/requirements'
+    | '/security'
+    | '/settings'
+    | '/sprints'
+    | '/tasks'
+    | '/testing'
+    | '/oauth/callback'
+    | '/organizations/new'
+    | '/projects/new'
+    | '/organizations'
+    | '/projects'
+    | '/organizations/$organizationId/members'
+    | '/organizations/$organizationId/settings'
+    | '/organizations/$organizationId/teams'
+    | '/projects/$projectId/members'
+    | '/projects/$projectId/milestones'
+    | '/organizations/$organizationId'
+    | '/projects/$projectId'
+  id:
+    | '__root__'
+    | '/'
+    | '/_app'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/reset-password'
+    | '/unauthorized'
+    | '/_app/analytics'
+    | '/_app/bugs'
+    | '/_app/code-review'
+    | '/_app/dashboard'
+    | '/_app/neurobot'
+    | '/_app/notifications'
+    | '/_app/pipelines'
+    | '/_app/portfolio'
+    | '/_app/profile'
+    | '/_app/requirements'
+    | '/_app/security'
+    | '/_app/settings'
+    | '/_app/sprints'
+    | '/_app/tasks'
+    | '/_app/testing'
+    | '/oauth/callback'
+    | '/_app/organizations/$organizationId'
+    | '/_app/organizations/new'
+    | '/_app/projects/$projectId'
+    | '/_app/projects/new'
+    | '/_app/organizations/'
+    | '/_app/projects/'
+    | '/_app/organizations/$organizationId/members'
+    | '/_app/organizations/$organizationId/settings'
+    | '/_app/organizations/$organizationId/teams'
+    | '/_app/projects/$projectId/members'
+    | '/_app/projects/$projectId/milestones'
+    | '/_app/organizations/$organizationId/'
+    | '/_app/projects/$projectId/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  LoginRoute: typeof LoginRoute
+  RegisterRoute: typeof RegisterRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  UnauthorizedRoute: typeof UnauthorizedRoute
+  OauthCallbackRoute: typeof OauthCallbackRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/unauthorized': {
+      id: '/unauthorized'
+      path: '/unauthorized'
+      fullPath: '/unauthorized'
+      preLoaderRoute: typeof UnauthorizedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +520,312 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/oauth/callback': {
+      id: '/oauth/callback'
+      path: '/oauth/callback'
+      fullPath: '/oauth/callback'
+      preLoaderRoute: typeof OauthCallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app/testing': {
+      id: '/_app/testing'
+      path: '/testing'
+      fullPath: '/testing'
+      preLoaderRoute: typeof AppTestingRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/tasks': {
+      id: '/_app/tasks'
+      path: '/tasks'
+      fullPath: '/tasks'
+      preLoaderRoute: typeof AppTasksRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/sprints': {
+      id: '/_app/sprints'
+      path: '/sprints'
+      fullPath: '/sprints'
+      preLoaderRoute: typeof AppSprintsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/settings': {
+      id: '/_app/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/security': {
+      id: '/_app/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof AppSecurityRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/requirements': {
+      id: '/_app/requirements'
+      path: '/requirements'
+      fullPath: '/requirements'
+      preLoaderRoute: typeof AppRequirementsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/profile': {
+      id: '/_app/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AppProfileRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/portfolio': {
+      id: '/_app/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof AppPortfolioRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/pipelines': {
+      id: '/_app/pipelines'
+      path: '/pipelines'
+      fullPath: '/pipelines'
+      preLoaderRoute: typeof AppPipelinesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/notifications': {
+      id: '/_app/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof AppNotificationsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/neurobot': {
+      id: '/_app/neurobot'
+      path: '/neurobot'
+      fullPath: '/neurobot'
+      preLoaderRoute: typeof AppNeurobotRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/dashboard': {
+      id: '/_app/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/code-review': {
+      id: '/_app/code-review'
+      path: '/code-review'
+      fullPath: '/code-review'
+      preLoaderRoute: typeof AppCodeReviewRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/bugs': {
+      id: '/_app/bugs'
+      path: '/bugs'
+      fullPath: '/bugs'
+      preLoaderRoute: typeof AppBugsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/analytics': {
+      id: '/_app/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AppAnalyticsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/projects/': {
+      id: '/_app/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof AppProjectsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/organizations/': {
+      id: '/_app/organizations/'
+      path: '/organizations'
+      fullPath: '/organizations/'
+      preLoaderRoute: typeof AppOrganizationsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/projects/new': {
+      id: '/_app/projects/new'
+      path: '/projects/new'
+      fullPath: '/projects/new'
+      preLoaderRoute: typeof AppProjectsNewRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/projects/$projectId': {
+      id: '/_app/projects/$projectId'
+      path: '/projects/$projectId'
+      fullPath: '/projects/$projectId'
+      preLoaderRoute: typeof AppProjectsProjectIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/organizations/new': {
+      id: '/_app/organizations/new'
+      path: '/organizations/new'
+      fullPath: '/organizations/new'
+      preLoaderRoute: typeof AppOrganizationsNewRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/organizations/$organizationId': {
+      id: '/_app/organizations/$organizationId'
+      path: '/organizations/$organizationId'
+      fullPath: '/organizations/$organizationId'
+      preLoaderRoute: typeof AppOrganizationsOrganizationIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/projects/$projectId/': {
+      id: '/_app/projects/$projectId/'
+      path: '/'
+      fullPath: '/projects/$projectId/'
+      preLoaderRoute: typeof AppProjectsProjectIdIndexRouteImport
+      parentRoute: typeof AppProjectsProjectIdRoute
+    }
+    '/_app/organizations/$organizationId/': {
+      id: '/_app/organizations/$organizationId/'
+      path: '/'
+      fullPath: '/organizations/$organizationId/'
+      preLoaderRoute: typeof AppOrganizationsOrganizationIdIndexRouteImport
+      parentRoute: typeof AppOrganizationsOrganizationIdRoute
+    }
+    '/_app/projects/$projectId/milestones': {
+      id: '/_app/projects/$projectId/milestones'
+      path: '/milestones'
+      fullPath: '/projects/$projectId/milestones'
+      preLoaderRoute: typeof AppProjectsProjectIdMilestonesRouteImport
+      parentRoute: typeof AppProjectsProjectIdRoute
+    }
+    '/_app/projects/$projectId/members': {
+      id: '/_app/projects/$projectId/members'
+      path: '/members'
+      fullPath: '/projects/$projectId/members'
+      preLoaderRoute: typeof AppProjectsProjectIdMembersRouteImport
+      parentRoute: typeof AppProjectsProjectIdRoute
+    }
+    '/_app/organizations/$organizationId/teams': {
+      id: '/_app/organizations/$organizationId/teams'
+      path: '/teams'
+      fullPath: '/organizations/$organizationId/teams'
+      preLoaderRoute: typeof AppOrganizationsOrganizationIdTeamsRouteImport
+      parentRoute: typeof AppOrganizationsOrganizationIdRoute
+    }
+    '/_app/organizations/$organizationId/settings': {
+      id: '/_app/organizations/$organizationId/settings'
+      path: '/settings'
+      fullPath: '/organizations/$organizationId/settings'
+      preLoaderRoute: typeof AppOrganizationsOrganizationIdSettingsRouteImport
+      parentRoute: typeof AppOrganizationsOrganizationIdRoute
+    }
+    '/_app/organizations/$organizationId/members': {
+      id: '/_app/organizations/$organizationId/members'
+      path: '/members'
+      fullPath: '/organizations/$organizationId/members'
+      preLoaderRoute: typeof AppOrganizationsOrganizationIdMembersRouteImport
+      parentRoute: typeof AppOrganizationsOrganizationIdRoute
+    }
   }
 }
 
+interface AppOrganizationsOrganizationIdRouteChildren {
+  AppOrganizationsOrganizationIdMembersRoute: typeof AppOrganizationsOrganizationIdMembersRoute
+  AppOrganizationsOrganizationIdSettingsRoute: typeof AppOrganizationsOrganizationIdSettingsRoute
+  AppOrganizationsOrganizationIdTeamsRoute: typeof AppOrganizationsOrganizationIdTeamsRoute
+  AppOrganizationsOrganizationIdIndexRoute: typeof AppOrganizationsOrganizationIdIndexRoute
+}
+
+const AppOrganizationsOrganizationIdRouteChildren: AppOrganizationsOrganizationIdRouteChildren =
+  {
+    AppOrganizationsOrganizationIdMembersRoute:
+      AppOrganizationsOrganizationIdMembersRoute,
+    AppOrganizationsOrganizationIdSettingsRoute:
+      AppOrganizationsOrganizationIdSettingsRoute,
+    AppOrganizationsOrganizationIdTeamsRoute:
+      AppOrganizationsOrganizationIdTeamsRoute,
+    AppOrganizationsOrganizationIdIndexRoute:
+      AppOrganizationsOrganizationIdIndexRoute,
+  }
+
+const AppOrganizationsOrganizationIdRouteWithChildren =
+  AppOrganizationsOrganizationIdRoute._addFileChildren(
+    AppOrganizationsOrganizationIdRouteChildren,
+  )
+
+interface AppProjectsProjectIdRouteChildren {
+  AppProjectsProjectIdMembersRoute: typeof AppProjectsProjectIdMembersRoute
+  AppProjectsProjectIdMilestonesRoute: typeof AppProjectsProjectIdMilestonesRoute
+  AppProjectsProjectIdIndexRoute: typeof AppProjectsProjectIdIndexRoute
+}
+
+const AppProjectsProjectIdRouteChildren: AppProjectsProjectIdRouteChildren = {
+  AppProjectsProjectIdMembersRoute: AppProjectsProjectIdMembersRoute,
+  AppProjectsProjectIdMilestonesRoute: AppProjectsProjectIdMilestonesRoute,
+  AppProjectsProjectIdIndexRoute: AppProjectsProjectIdIndexRoute,
+}
+
+const AppProjectsProjectIdRouteWithChildren =
+  AppProjectsProjectIdRoute._addFileChildren(AppProjectsProjectIdRouteChildren)
+
+interface AppRouteChildren {
+  AppAnalyticsRoute: typeof AppAnalyticsRoute
+  AppBugsRoute: typeof AppBugsRoute
+  AppCodeReviewRoute: typeof AppCodeReviewRoute
+  AppDashboardRoute: typeof AppDashboardRoute
+  AppNeurobotRoute: typeof AppNeurobotRoute
+  AppNotificationsRoute: typeof AppNotificationsRoute
+  AppPipelinesRoute: typeof AppPipelinesRoute
+  AppPortfolioRoute: typeof AppPortfolioRoute
+  AppProfileRoute: typeof AppProfileRoute
+  AppRequirementsRoute: typeof AppRequirementsRoute
+  AppSecurityRoute: typeof AppSecurityRoute
+  AppSettingsRoute: typeof AppSettingsRoute
+  AppSprintsRoute: typeof AppSprintsRoute
+  AppTasksRoute: typeof AppTasksRoute
+  AppTestingRoute: typeof AppTestingRoute
+  AppOrganizationsOrganizationIdRoute: typeof AppOrganizationsOrganizationIdRouteWithChildren
+  AppOrganizationsNewRoute: typeof AppOrganizationsNewRoute
+  AppProjectsProjectIdRoute: typeof AppProjectsProjectIdRouteWithChildren
+  AppProjectsNewRoute: typeof AppProjectsNewRoute
+  AppOrganizationsIndexRoute: typeof AppOrganizationsIndexRoute
+  AppProjectsIndexRoute: typeof AppProjectsIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAnalyticsRoute: AppAnalyticsRoute,
+  AppBugsRoute: AppBugsRoute,
+  AppCodeReviewRoute: AppCodeReviewRoute,
+  AppDashboardRoute: AppDashboardRoute,
+  AppNeurobotRoute: AppNeurobotRoute,
+  AppNotificationsRoute: AppNotificationsRoute,
+  AppPipelinesRoute: AppPipelinesRoute,
+  AppPortfolioRoute: AppPortfolioRoute,
+  AppProfileRoute: AppProfileRoute,
+  AppRequirementsRoute: AppRequirementsRoute,
+  AppSecurityRoute: AppSecurityRoute,
+  AppSettingsRoute: AppSettingsRoute,
+  AppSprintsRoute: AppSprintsRoute,
+  AppTasksRoute: AppTasksRoute,
+  AppTestingRoute: AppTestingRoute,
+  AppOrganizationsOrganizationIdRoute:
+    AppOrganizationsOrganizationIdRouteWithChildren,
+  AppOrganizationsNewRoute: AppOrganizationsNewRoute,
+  AppProjectsProjectIdRoute: AppProjectsProjectIdRouteWithChildren,
+  AppProjectsNewRoute: AppProjectsNewRoute,
+  AppOrganizationsIndexRoute: AppOrganizationsIndexRoute,
+  AppProjectsIndexRoute: AppProjectsIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
+  ForgotPasswordRoute: ForgotPasswordRoute,
+  LoginRoute: LoginRoute,
+  RegisterRoute: RegisterRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  UnauthorizedRoute: UnauthorizedRoute,
+  OauthCallbackRoute: OauthCallbackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
